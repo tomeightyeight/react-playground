@@ -23,7 +23,10 @@ class App extends React.Component {
         <input type="text" 
                onChange={this.update.bind(this)} 
         />
-      
+        
+        <TextNode />
+        <TextNode2 />
+
       </div>
     );
   }
@@ -38,5 +41,13 @@ App.defaultProps = {
   name: 'World',
   num: 0
 };
+
+const TextNode = () => {
+  return (
+    <span>TextNode</span>
+  );
+};
+
+const TextNode2 = () => <span>TextNode2</span>;
 
 export default App;
