@@ -1,12 +1,29 @@
 import React from 'react';
 
 class App extends React.Component {
+  constructor () {
+    super();
+
+    this.state = {
+      text: 'this is the localState text'
+    };
+  }
+
+  update (e) {
+    this.setState({
+      text: e.target.value
+    });
+  }
+
   render () {
     return (
       <div>
-        <h1>Mr first React App</h1>
-        <p>Hello, { this.props.name }!</p>
-        <p>{ this.props.num }</p>
+        <h1>{this.state.text}</h1>
+        
+        <input type="text" 
+               onChange={this.update.bind(this)} 
+        />
+      
       </div>
     );
   }
